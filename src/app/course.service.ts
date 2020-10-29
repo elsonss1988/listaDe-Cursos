@@ -12,9 +12,19 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CourseService {
-  retrieveAll(): Course[] {
-    return COURSES;
-  }
+    retrieveAll(): Course[] {
+      return COURSES;
+    }
+
+    retrieveById(id: number): Course{
+      return COURSES.find((courseIterator:Course)=> courseIterator.id === id);
+    }
+    save(course:  Course): void{
+      if(course.id){
+        const index=COURSES.findIndex((courseIterator:Course) => courseIterator.id=== course.id);
+        COURSES[index]=course;
+      }
+    }
 
   //private coursesUrl: string = 'http://localhost:3100/api/courses';
 
