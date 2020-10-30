@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { Course } from './course';
 import { error404Component } from './error404/error404.component';
 import { CourseInfoComponent } from './course-info.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { CourseInfoComponent } from './course-info.component';
     CourseInfoComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     FormsModule,
     RouterModule.forRoot([
