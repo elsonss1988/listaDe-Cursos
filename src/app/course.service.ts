@@ -31,6 +31,10 @@ export class CourseService {
       }
     }
 
+    deleteById(id:number):Observable<any>{
+        return this.httpClient.delete<any>(`${this.courseUrl}/${id}`);
+    }
+
   //private coursesUrl: string = 'http://localhost:3100/api/courses';
 
   //constructor(private httpClient: HttpClient) { }
